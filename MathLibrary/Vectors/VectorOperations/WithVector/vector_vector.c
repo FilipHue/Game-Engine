@@ -9,14 +9,14 @@
 
 
 vector
-add(vector vec1, vector vec2) {
+addVect(vector vec1, vector vec2) {
     if (vec1.size != vec2.size) {
         return VECTOR_UNDEFINED;
     }
 
     vector new_vector;
 
-    new_vector = create(vec1.size);
+    new_vector = createVector(vec1.size);
     for (unsigned int i = 0; i < new_vector.size; i++) {
         new_vector.elements[i] = vec1.elements[i] + vec2.elements[i];
     }
@@ -26,7 +26,7 @@ add(vector vec1, vector vec2) {
 
 
 bool
-addTo(vector *vec1, vector vec2) {
+addVectBy(vector *vec1, vector vec2) {
     if (vec1->size != vec2.size) {
         return false;
     }
@@ -40,14 +40,14 @@ addTo(vector *vec1, vector vec2) {
 
 
 vector
-substract(vector vec1, vector vec2) {
+substractVect(vector vec1, vector vec2) {
     if (vec1.size != vec2.size) {
         return VECTOR_UNDEFINED;
     }
 
     vector new_vector;
 
-    new_vector = create(vec1.size);
+    new_vector = createVector(vec1.size);
     for (unsigned int i = 0; i < new_vector.size; i++) {
         new_vector.elements[i] = vec1.elements[i] - vec2.elements[i];
     }
@@ -57,7 +57,7 @@ substract(vector vec1, vector vec2) {
 
 
 bool
-substractTo(vector *vec1, vector vec2) {
+substractVectBy(vector *vec1, vector vec2) {
     if (vec1->size != vec2.size) {
         return false;
     }
@@ -78,7 +78,7 @@ vectorMultiplication(vector vec1, vector vec2) {
 
     vector new_vector;
 
-    new_vector = create(vec1.size);
+    new_vector = createVector(vec1.size);
     for (unsigned int i = 0; i < new_vector.size; i++) {
         new_vector.elements[i] = vec1.elements[i] * vec2.elements[i];
     }
@@ -109,7 +109,7 @@ vectorDivision(vector vec1, vector vec2) {
 
     vector new_vector;
 
-    new_vector = create(vec1.size);
+    new_vector = createVector(vec1.size);
     for (unsigned int i = 0; i < new_vector.size; i++) {
         new_vector.elements[i] = vec1.elements[i] / vec2.elements[i];
     }
@@ -162,7 +162,7 @@ crossProduct(vector vec1, vector vec2) {
 
     vector parallel_vect;
 
-    parallel_vect = create(3);
+    parallel_vect = createVector(3);
     parallel_vect.elements[0] = (vec1.elements[1] * vec2.elements[2]) - 
                                 (vec1.elements[2] * vec2.elements[1]);
     parallel_vect.elements[1] = (vec1.elements[2] * vec2.elements[0]) -
@@ -194,11 +194,11 @@ magnitudeSquared(vector vec) {
 
 
 vector
-normalizeVector(vector vec) {
+normalizeVectorTo(vector vec) {
     vector normalized_vect;
     float mag;
 
-    normalized_vect = create(vec.size);
+    normalized_vect = createVector(vec.size);
     mag = magnitude(vec);
     for (unsigned int i = 0; i < vec.size; i++) {
         normalized_vect.elements[i] = vec.elements[i] / mag;
@@ -209,7 +209,7 @@ normalizeVector(vector vec) {
 
 
 void
-normalizeVectorTo(vector *vec) {
+normalizeVectorAt(vector *vec) {
     float mag;
 
     mag = magnitude(*vec);

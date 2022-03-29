@@ -4,29 +4,34 @@
 #include "../MathLibrary/Vectors/vector.h"
 #include "../MathLibrary/Vectors/VectorOperations/WithScalar/vector_scalar.h"
 #include "../MathLibrary/Vectors/VectorOperations/WithVector/vector_vector.h"
-
+#include "../MathLibrary/Matrices/matrix.h"
+#include "../MathLibrary/Matrices/MatricesOperations/WithScalar/matrix_scalar.h"
+#include "../MathLibrary/Matrices/MatricesOperations/WithMatrix/matrix_matrix.h"
+#include "../MathLibrary/MatVectOps/MatVect/matvect.h"
+#include "../MathLibrary/MatVectOps/VectMat/vectmat.h"
 
 int main() {
-    vector vec1 = vector(3.0f, 4.0f, 5.0f);
-    printVector(vec1);
 
-    vector vec2 = powerVector(vec1, 3.0f);
-    printVector(vec2);
+    matrix mat = createNewMatrix(4, 4, 2.0f, -1.0f, 3.0f, 5.0f,
+                                        1.0f, 3.0f, 0.0f, 4.0f,
+                                        3.0f, 0.0f, -1.0f, -2.0f,
+                                        0.0f, 0.0f, 0.0f, 1.0f);
+    vector vec = vector(2.0f, 0.0f, -1.0f, 1.0f);
 
-    printf("%d\n", isOrthogonal(vec1, vec2));
+    vector row_vec = multiplyMatVect(mat, vec);
+    printVector(vec);
+    printMatrix(mat);
 
-    vector vec3 = normalizeVector(vec1);
-    printVector(vec3);
+    printVector(row_vec);
 
-    vector vec4 = crossProduct(vec1, vec2);
-    printVector(vec4);
-    printf("%d\n", isOrthogonal(vec4, vec1));
-    printf("%d\n", isOrthogonal(vec4, vec2));
+    matrix mat1 = createNewMatrix(2, 2, 1.0f, 2.0f, 3.0f, 4.0f);
+    matrix mat2 = createNewMatrix(2, 2, 4.0f, 2.0f, 2.0f, 1.0f);
+    printMatrix(mat1);
+    printMatrix(mat2);
+    printMatrix(multiplyMat(mat1, mat2));
 
-
-    vector vec5 = vector(4.0f, 1.0f, 2.0f);
-    vector vec6 = vector(1.0f, 0.0f, -2.0f);
-    printf("%d\n", isOrthogonal(vec5, vec6));
+    matrix mat3 = matrix(2, 2, 1.0f, 2.0f, 3.0f, 4.0f);
+    printMatrix(mat3);
 
 
     return 0;

@@ -13,7 +13,7 @@
  * @return vector 
  */
 vector
-add(vector vec1, vector vec2);
+addVect(vector vec1, vector vec2);
 
 /**
  * @brief 
@@ -24,7 +24,7 @@ add(vector vec1, vector vec2);
  * @return false 
  */
 bool
-addTo(vector *vec1, vector vec2);
+addVectBy(vector *vec1, vector vec2);
 
 /**
  * @brief
@@ -34,7 +34,7 @@ addTo(vector *vec1, vector vec2);
  * @return vector 
  */
 vector
-substract(vector vec1, vector vec2);
+substractVect(vector vec1, vector vec2);
 
 /**
  * @brief
@@ -45,7 +45,7 @@ substract(vector vec1, vector vec2);
  * @return false 
  */
 bool
-substractTo(vector *vec1, vector vec2);
+substractVectBy(vector *vec1, vector vec2);
 
 /**
  * @brief 
@@ -144,7 +144,7 @@ magnitudeSquared(vector vec);
  * @return vector 
  */
 vector
-normalizeVector(vector vec);
+normalizeVectorTo(vector vec);
 
 /**
  * @brief 
@@ -152,7 +152,7 @@ normalizeVector(vector vec);
  * @param vec 
  */
 void
-normalizeVectorTo(vector *vec);
+normalizeVectorAt(vector *vec);
 
 
 #endif  //  _VECTOR_VECTOR_H_

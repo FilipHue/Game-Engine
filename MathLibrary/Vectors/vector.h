@@ -34,7 +34,7 @@ extern const vector VECTOR_UNDEFINED;
  * @return vector 
  */
 vector
-create(unsigned int size);
+createVector(unsigned int size);
 
 /**
  * @brief Create a Default Vector object
@@ -100,7 +100,7 @@ printVector(vector vec);
  * @return false 
  */
 bool
-equals(vector vec1, vector vec2);
+equalVector(vector vec1, vector vec2);
 
 
 #endif  //  _VECTOR_H_

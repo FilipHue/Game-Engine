@@ -7,7 +7,7 @@
 const vector VECTOR_UNDEFINED = {0, NULL};
 
 vector
-create(unsigned int size) {
+createVector(unsigned int size) {
     vector new_vect;
 
     new_vect.size = size;
@@ -21,7 +21,7 @@ vector
 createDefaultVector(unsigned int size, float default_value) {
     vector new_vector;
     
-    new_vector = create(size);
+    new_vector = createVector(size);
     for (unsigned int i = 0; i < size; i++) {
         new_vector.elements[i] = default_value;
     }
@@ -40,7 +40,7 @@ vector
 createNewVector(unsigned int size, ...) {
     vector new_vector;
     
-    new_vector = create(size);
+    new_vector = createVector(size);
     va_list args_list;
     va_start(args_list, size);
 
@@ -81,12 +81,12 @@ printVector(vector vec) {
             printf(", ");
         }
     }
-    printf("]\n");
+    printf("]\n\n");
 }
 
 
 bool
-equals(vector vec1, vector vec2) {
+equalVector(vector vec1, vector vec2) {
     if (vec1.size == vec2.size) {
         for (unsigned int i = 0; i < vec1.size; i++) {
             if (vec1.elements[i] != vec2.elements[i]) {

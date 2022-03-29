@@ -9,10 +9,10 @@
 
 
 vector
-scalarMultiplication(vector vec, float scalar) {
+scalarVectMultiplicationTo(vector vec, float scalar) {
     vector new_vector;
 
-    new_vector = create(vec.size);
+    new_vector = createVector(vec.size);
     for (unsigned int i = 0; i < vec.size; i++) {
         new_vector.elements[i] = vec.elements[i] * scalar;
     }
@@ -22,7 +22,7 @@ scalarMultiplication(vector vec, float scalar) {
 
 
 void
-scalarMultiplicationBy(vector *vec, float scalar) {
+scalarVectMultiplicationAt(vector *vec, float scalar) {
     for (unsigned int i = 0; i < vec->size; i++) {
         vec->elements[i] *= scalar;
     }
@@ -30,10 +30,10 @@ scalarMultiplicationBy(vector *vec, float scalar) {
 
 
 vector
-scalarDivision(vector vec, float scalar) {
+scalarVectDivisionTo(vector vec, float scalar) {
     vector new_vector;
 
-    new_vector = create(vec.size);
+    new_vector = createVector(vec.size);
     for (unsigned int i = 0; i < vec.size; i++) {
         new_vector.elements[i] = vec.elements[i] / scalar;
     }
@@ -43,7 +43,7 @@ scalarDivision(vector vec, float scalar) {
 
 
 void
-scalarDivisionBy(vector *vec, float scalar) {
+scalarVectDivisionAt(vector *vec, float scalar) {
     for (unsigned int i = 0; i < vec->size; i++) {
         vec->elements[i] /= scalar;
     }
@@ -51,10 +51,10 @@ scalarDivisionBy(vector *vec, float scalar) {
 
 
 vector
-powerVector(vector vec, float power) {
+powerVectorTo(vector vec, float power) {
     vector new_vector;
 
-    new_vector = create(vec.size);
+    new_vector = createVector(vec.size);
     for (unsigned int i = 0; i < vec.size; i++) {
         new_vector.elements[i] = pow(vec.elements[i], power);
     }
@@ -64,7 +64,7 @@ powerVector(vector vec, float power) {
 
 
 void
-powerVectorTo(vector *vec, float power) {
+powerVectorAt(vector *vec, float power) {
     for (unsigned int i = 0; i < vec->size; i++) {
         pow(vec->elements[i], power);
     }

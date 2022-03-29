@@ -13,7 +13,7 @@
  * @return vector 
  */
 vector
-scalarMultiplication(vector vec, float scalar);
+scalarVectMultiplicationTo(vector vec, float scalar);
 
 /**
  * @brief 
@@ -22,7 +22,7 @@ scalarMultiplication(vector vec, float scalar);
  * @param scalar 
  */
 void
-scalarMultiplicationBy(vector *vec, float scalar);
+scalarVectMultiplicationAt(vector *vec, float scalar);
 
 /**
  * @brief 
@@ -32,7 +32,7 @@ scalarMultiplicationBy(vector *vec, float scalar);
  * @return vector 
  */
 vector
-scalarDivision(vector vec, float scalar);
+scalarVectDivisionTo(vector vec, float scalar);
 
 /**
  * @brief 
@@ -41,7 +41,7 @@ scalarDivision(vector vec, float scalar);
  * @param scalar 
  */
 void
-scalarDivisionBy(vector *vec, float scalar);
+scalarVectDivisionAt(vector *vec, float scalar);
 
 /**
  * @brief 
@@ -50,7 +50,7 @@ scalarDivisionBy(vector *vec, float scalar);
  * @param power 
  */
 vector
-powerVector(vector vec, float power);
+powerVectorTo(vector vec, float power);
 
 /**
  * @brief 
@@ -60,7 +60,7 @@ powerVector(vector vec, float power);
  * @return vector 
  */
 void
-powerVectorTo(vector *vec, float power);
+powerVectorAt(vector *vec, float power);
 
 /**
  * @brief 
