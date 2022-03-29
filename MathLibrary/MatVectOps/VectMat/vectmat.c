@@ -30,3 +30,26 @@ MatrixCollumnToVector(vector *vec) {
 
     return collumn_mat;
 }
+
+matrix
+augmentVect(matrix *mat, vector *vec) {
+    if (vec->size != mat->rows) {
+        return MATRIX_UNDEFINED;
+    }
+
+    matrix augMat;
+
+    augMat = createMatrix(mat->rows, mat->collums + 1);
+    for (unsigned int i = 0; i < mat->rows; i++) {
+        unsigned int j;
+
+        j = 0;
+        for (; j < mat->collums; j++) {
+            augMat.elements[i][j] = mat->elements[i][j];
+        }
+
+        augMat.elements[i][j] = vec->elements[i];
+    }
+
+    return augMat;
+}

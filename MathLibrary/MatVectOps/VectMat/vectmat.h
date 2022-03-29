@@ -25,4 +25,14 @@ MatrixRowToVector(vector *vec);
 matrix
 MatrixCollumnToVector(vector *vec);
 
+/**
+ * @brief 
+ * 
+ * @param mat 
+ * @param vec 
+ * @return matrix 
+ */
+matrix
+augmentVect(matrix *mat, vector *vec);
+
 #endif  //  _VECT_MAT_H_

@@ -111,3 +111,42 @@ multiplyMat(matrix mat1, matrix mat2) {
 
     return product_matrix;
 }
+
+
+matrix
+transposeMat(matrix *mat) {
+    matrix transpose;
+    
+    transpose = createMatrix(mat->rows, mat->collums);
+    for (unsigned int i = 0; i < mat->rows; i++) {
+        for (unsigned int j = 0; j < mat->collums; j++) {
+            transpose.elements[i][j] = mat->elements[j][i];
+        }
+    }
+
+    return transpose;
+}
+
+matrix
+augmentMat(matrix *mat1, matrix *mat2) {
+    if (mat1->rows != mat2->rows) {
+        return MATRIX_UNDEFINED;
+    }
+
+    matrix augMat;
+
+    augMat = createMatrix(mat1->rows, mat1->collums + mat2->collums);
+    for (unsigned int i = 0; i < mat1->rows; i++) {
+        unsigned int j;
+
+        for (j = 0; j < mat1->collums; j++) {
+            augMat.elements[i][j] = mat1->elements[i][j];
+        }
+
+        for (unsigned int t = 0; t < mat2->collums; t++) {
+            augMat.elements[i][j + t] = mat2->elements[i][t];
+        }
+    }
+
+    return augMat;
+}

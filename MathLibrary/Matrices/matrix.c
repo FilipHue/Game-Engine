@@ -94,7 +94,12 @@ matrix
 copyMatrixPointer(matrix *mat) {
     matrix new_matrix;
 
-    memcpy(&new_matrix, mat, sizeof(matrix));
+    new_matrix = createMatrix(mat->rows, mat->collums);
+    for (unsigned int i = 0; i < mat->rows; i++) {
+        for (unsigned int j = 0; j < mat->collums; j++) {
+            new_matrix.elements[i][j] = mat->elements[i][j];
+        }
+    }
 
     return new_matrix;
 }
@@ -132,4 +137,15 @@ equalMatrix(matrix mat1, matrix mat2) {
     }
 
     return false;
+}
+
+void
+destroyMat(matrix *mat) {
+    for (unsigned i = 0; i < mat->rows; i++) {
+        free(mat->elements[i]);
+    }
+    free(mat->elements);
+    mat->elements = NULL;
+    mat->rows = 0;
+    mat->collums = 0;
 }

@@ -99,3 +99,10 @@ equalVector(vector vec1, vector vec2) {
 
     return false;
 }
+
+void
+destroyVect(vector *vec) {
+    free(vec->elements);
+    vec->elements = NULL;
+    vec->size = 0;
+}

@@ -102,5 +102,13 @@ printVector(vector vec);
 bool
 equalVector(vector vec1, vector vec2);
 
+/**
+ * @brief 
+ * 
+ * @param vec 
+ */
+void
+destroyVect(vector *vec);
+
 
 #endif  //  _VECTOR_H_

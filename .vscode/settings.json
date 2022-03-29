@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "vector.h": "c",
+        "vector_funcs.h": "c",
+        "vector_vector.h": "c",
+        "matrix.h": "c",
+        "matrix_matrix.h": "c",
+        "vectmat.h": "c",
+        "ref.h": "c",
+        "rref.h": "c"
+    }
+}

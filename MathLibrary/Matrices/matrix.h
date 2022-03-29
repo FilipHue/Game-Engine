@@ -106,4 +106,12 @@ printMatrix(matrix mat);
 bool
 equalMatrix(matrix mat1, matrix mat2);
 
+/**
+ * @brief 
+ * 
+ * @param mat 
+ */
+void
+destroyMat(matrix *mat);
+
 #endif
