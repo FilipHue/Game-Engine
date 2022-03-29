@@ -83,3 +83,19 @@ printVector(vector vec) {
     }
     printf("]\n");
 }
+
+
+bool
+equals(vector vec1, vector vec2) {
+    if (vec1.size == vec2.size) {
+        for (unsigned int i = 0; i < vec1.size; i++) {
+            if (vec1.elements[i] != vec2.elements[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    return false;
+}

@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 #include "./constants.h"
-#include "./vector.h"
-#include "./vector_funcs.h"
+#include "../MathLibrary/Vectors/vector.h"
+#include "../MathLibrary/Vectors/VectorOperations/WithScalar/vector_scalar.h"
+#include "../MathLibrary/Vectors/VectorOperations/WithVector/vector_vector.h"
 
 
 int main() {

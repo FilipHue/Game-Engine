@@ -1,76 +1,9 @@
-#ifndef _VECTOR_FUNCS_H_
-#define _VECTOR_FUNCS_H_
+#ifndef _VECTOR_VECTOR_H_
+#define _VECTOR_VECTOR_H_
 
-#include "vector.h"
-#include "constants.h"
+#include "../../vector.h"
+#include "../../../../src/constants.h"
 
-/**
- * @brief 
- * 
- * @param vec1 
- * @param vec2 
- * @return true 
- * @return false 
- */
-bool
-equals(vector vec1, vector vec2);
-
-/**
- * @brief 
- * 
- * @param vec 
- * @param scalar 
- * @return vector 
- */
-vector
-scalarMultiplication(vector vec, float scalar);
-
-/**
- * @brief 
- * 
- * @param v 
- * @param scalar 
- */
-void
-scalarMultiplicationBy(vector *vec, float scalar);
-
-/**
- * @brief 
- * 
- * @param vec 
- * @param scalar 
- * @return vector 
- */
-vector
-scalarDivision(vector vec, float scalar);
-
-/**
- * @brief 
- * 
- * @param vec 
- * @param scalar 
- */
-void
-scalarDivisionBy(vector *vec, float scalar);
-
-/**
- * @brief 
- * 
- * @param vec 
- * @param power 
- */
-vector
-powerVector(vector vec, float power);
-
-/**
- * @brief 
- * 
- * @param vec 
- * @param power 
- * @return vector 
- */
-void
-powerVectorTo(vector *vec, float power);
 
 /**
  * @brief 
@@ -221,4 +154,5 @@ normalizeVector(vector vec);
 void
 normalizeVectorTo(vector *vec);
 
-#endif  //  _VECTOR_FUNCS_H_
+
+#endif  //  _VECTOR_VECTOR_H_

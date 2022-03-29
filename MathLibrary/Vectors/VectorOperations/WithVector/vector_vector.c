@@ -3,88 +3,9 @@
 #include <string.h>
 #include <math.h>
 
-#include "./constants.h"
-#include "./vector_funcs.h"
-#include "./vector.h"
-
-
-bool
-equals(vector vec1, vector vec2) {
-    if (vec1.size == vec2.size) {
-        for (unsigned int i = 0; i < vec1.size; i++) {
-            if (vec1.elements[i] != vec2.elements[i]) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    return false;
-}
-
-
-vector
-scalarMultiplication(vector vec, float scalar) {
-    vector new_vector;
-
-    new_vector = create(vec.size);
-    for (unsigned int i = 0; i < vec.size; i++) {
-        new_vector.elements[i] = vec.elements[i] * scalar;
-    }
-
-    return new_vector;
-}
-
-
-void
-scalarMultiplicationBy(vector *vec, float scalar) {
-    for (unsigned int i = 0; i < vec->size; i++) {
-        vec->elements[i] *= scalar;
-    }
-}
-
-
-vector
-scalarDivision(vector vec, float scalar) {
-    vector new_vector;
-
-    new_vector = create(vec.size);
-    for (unsigned int i = 0; i < vec.size; i++) {
-        new_vector.elements[i] = vec.elements[i] / scalar;
-    }
-
-    return new_vector;
-}
-
-
-void
-scalarDivisionBy(vector *vec, float scalar) {
-    for (unsigned int i = 0; i < vec->size; i++) {
-        vec->elements[i] /= scalar;
-    }
-}
-
-
-vector
-powerVector(vector vec, float power) {
-    vector new_vector;
-
-    new_vector = create(vec.size);
-    for (unsigned int i = 0; i < vec.size; i++) {
-        new_vector.elements[i] = pow(vec.elements[i], power);
-    }
-
-    return new_vector;
-}
-
-
-void
-powerVectorTo(vector *vec, float power) {
-    for (unsigned int i = 0; i < vec->size; i++) {
-        pow(vec->elements[i], power);
-    }
-}
+#include "../../../../src/constants.h"
+#include "../../vector.h"
+#include "./vector_vector.h"
 
 
 vector

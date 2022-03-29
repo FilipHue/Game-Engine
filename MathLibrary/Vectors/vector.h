@@ -4,7 +4,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-#include "./constants.h"
+#include "../../src/constants.h"
 
 
 typedef struct vector vector;
@@ -90,6 +90,17 @@ copyVectorPtr(vector vec);
  */
 void
 printVector(vector vec);
+
+/**
+ * @brief 
+ * 
+ * @param vec1 
+ * @param vec2 
+ * @return true 
+ * @return false 
+ */
+bool
+equals(vector vec1, vector vec2);
 
 
 #endif  //  _VECTOR_H_
