@@ -26,7 +26,7 @@ getMatrixRow(matrix *mat, int row) {
 
 vector
 getMatrixCollumn(matrix *mat, int collumn) {
-    if (collumn < 1 || collumn > (int)mat->rows) {
+    if (collumn < 1 || collumn > (int)mat->collums) {
         return VECTOR_UNDEFINED;
     }
 

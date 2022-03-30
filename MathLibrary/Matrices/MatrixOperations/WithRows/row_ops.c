@@ -9,7 +9,7 @@
 
 bool
 swapRows(matrix *mat, unsigned int row1, unsigned int row2) {
-    if (row1 > mat->rows || row2 > mat->rows) {
+    if (row1 > mat->rows || row2 > mat->rows || !row1 || !row2) {
         return false;
     }
 
@@ -25,7 +25,7 @@ swapRows(matrix *mat, unsigned int row1, unsigned int row2) {
 
 bool
 addRows(matrix *mat, unsigned int row1, unsigned int row2) {
-    if (row1 > mat->rows || row2 > mat->rows) {
+    if (row1 > mat->rows || row2 > mat->rows || !row1 || !row2) {
         return false;
     }
 
@@ -39,7 +39,7 @@ addRows(matrix *mat, unsigned int row1, unsigned int row2) {
 
 bool
 multiplyRow(matrix *mat, unsigned int row, float factor) {
-    if (row > mat->rows || factor == 0) {
+    if (row > mat->rows || !row || factor == 0) {
         return false;
     }
 
@@ -53,7 +53,7 @@ multiplyRow(matrix *mat, unsigned int row, float factor) {
 
 bool
 addMultipleRows(matrix *mat, unsigned int row1, unsigned int row2, float factor) {
-    if (row1 > mat->rows || row2 > mat->rows || factor == 0) {
+    if (row1 > mat->rows || row2 > mat->rows || !row1 || !row2 || factor == 0) {
         return false;
     }
     

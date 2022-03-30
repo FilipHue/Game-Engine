@@ -21,7 +21,8 @@ TARGETS_O = src/engine.o $(VECTOR_PATH)/vector.o \
 						$(VECTMAT_OPS)/vectmat.o \
 						$(SYSTEMS)/Ref/ref.o \
 						$(SYSTEMS)/RRef/rref.o \
-						$(SYSTEMS)/Determinant/det.o
+						$(SYSTEMS)/Determinant/det.o \
+						$(SYSTEMS)/LU/lu.o
 
 build: $(TARGETS)
 
@@ -92,6 +93,10 @@ $(SYSTEMS)/Determinant/det.o: $(SYSTEMS)/Determinant/det.h $(SYSTEMS)/Determinan
 		$(CC) $(CFLAGS) $(DEBUG) $(SYSTEMS)/Determinant/det.c \
 								-c -o $(SYSTEMS)/Determinant/det.o
 
+$(SYSTEMS)/LU/lu.o: $(SYSTEMS)/LU/lu.h $(SYSTEMS)/LU/lu.c
+		$(CC) $(CFLAGS) $(DEBUG) $(SYSTEMS)/LU/lu.c \
+								-c -o $(SYSTEMS)/LU/lu.o
+
 run:
 	./$(TARGETS)
 
@@ -112,6 +117,7 @@ clean:
 	rm -f $(SYSTEMS)/Ref/*.o
 	rm -f $(SYSTEMS)/RRef/*.o
 	rm -f $(SYSTEMS)/Determinant/*.o
+	rm -f $(SYSTEMS)/LU/*.o
 	rm -f $(TARGETS)
 	rm -f src/*.o
 	clear

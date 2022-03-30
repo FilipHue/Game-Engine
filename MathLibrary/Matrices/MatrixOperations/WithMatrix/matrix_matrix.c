@@ -99,7 +99,6 @@ multiplyMat(matrix mat1, matrix mat2) {
     for (unsigned int i = 0; i < mat2.collums; i++) {
         collumns[i] = getMatrixCollumn(&mat2, i + 1);
     }
-
     matrix product_matrix;
 
     product_matrix = createMatrix(mat1.rows, mat2.collums);
