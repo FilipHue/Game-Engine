@@ -17,9 +17,15 @@
 #include "../MathLibrary/Systems/LU/lu.h"
 
 int main() {
-    matrix m = matrix(3, 4,
-                            6.0, 18.0, 3.0, 6.0,
-                            2.0, 12.0, 1.0, 7.0,
-                            4.0, 15.0, 3.0, 4.0);
+    matrix m = matrix(3, 3,
+                            -2.0, 1.0, 3.0,
+                            -4.0, 4.0, 1.0,
+                            6.0, 3.0, -1.0);
+
+    matrix L, U;
+    float d1, d2;
+    d1 = detMat(m);
+    d2 = luDet(m);
+    printf("%f\n%f\n", d1, d2);
     return 0;
 }

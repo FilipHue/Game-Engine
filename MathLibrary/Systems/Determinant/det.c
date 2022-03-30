@@ -5,6 +5,7 @@
 #include "./det.h"
 #include "../../Vectors/vector.h"
 #include "../../Matrices/matrix.h"
+#include "../LU/lu.h"
 
 
 matrix
@@ -49,6 +50,32 @@ detMat(matrix mat) {
         det += sign * mat.elements[0][j] * detMat(spliced);
         sign = -sign;
         destroyMat(&spliced);
+    }
+
+    return det;
+}
+
+float
+luDet(matrix mat) {
+    if (mat.rows != mat.collums) {
+        return 0.0f;
+    }
+    if (mat.rows == 1) {
+        return mat.elements[0][0];
+    }
+
+    matrix L, U;
+    float det = 0.0f;
+
+    luDecomposition(mat, &L, &U);
+    printMatrix(L);
+    printMatrix(U);
+    for (unsigned int i = 0; i < U.rows; i++) {
+        if (!det) {
+            det += U.elements[i][i];
+        } else {
+            det *= U.elements[i][i];
+        }
     }
 
     return det;

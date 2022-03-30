@@ -29,4 +29,13 @@ spliceMat(matrix *mat, unsigned int row, unsigned int collumn);
 float
 detMat(matrix mat);
 
+/**
+ * @brief 
+ * 
+ * @param mat 
+ * @return float 
+ */
+float
+luDet(matrix mat);
+
 #endif  //  _DET_H_
