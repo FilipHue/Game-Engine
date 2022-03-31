@@ -13,8 +13,8 @@
  * @param scalar 
  * @return matrix 
  */
-matrix
-addMatScalar(matrix mat, float scalar);
+matrix*
+addMatScalar(matrix *mat, float scalar);
 
 /**
  * @brief 
@@ -32,8 +32,8 @@ addMatScalarBy(matrix *mat, float scalar);
  * @param scalar 
  * @return matrix 
  */
-matrix
-subtractMatScalar(matrix mat, float scalar);
+matrix*
+subtractMatScalar(matrix *mat, float scalar);
 
 /**
  * @brief 
@@ -51,8 +51,8 @@ subtractMatScalarBy(matrix *mat, float scalar);
  * @param scalar 
  * @return matrix 
  */
-matrix
-divisionMatScalar(matrix mat, float scalar);
+matrix*
+divisionMatScalar(matrix *mat, float scalar);
 
 /**
  * @brief 
@@ -70,8 +70,8 @@ divisionMatScalarBy(matrix *mat, float scalar);
  * @param scalar 
  * @return matrix 
  */
-matrix
-multiplyMatScalar(matrix mat, float scalar);
+matrix*
+multiplyMatScalar(matrix *mat, float scalar);
 
 /**
  * @brief 
@@ -89,8 +89,8 @@ multiplyMatScalarBy(matrix *mat, float scalar);
  * @param power 
  * @return matrix 
  */
-matrix
-powerMatrix(matrix mat, float power);
+matrix*
+powerMatrix(matrix *mat, float power);
 
 /**
  * @brief 

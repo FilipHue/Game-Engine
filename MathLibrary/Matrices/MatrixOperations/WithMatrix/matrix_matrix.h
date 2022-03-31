@@ -13,8 +13,8 @@
  * @param mat2 
  * @return matrix 
  */
-matrix
-addMat(matrix mat1, matrix mat2);
+matrix*
+addMat(matrix *mat1, matrix *mat2);
 
 /**
  * @brief 
@@ -25,7 +25,7 @@ addMat(matrix mat1, matrix mat2);
  * @return false 
  */
 bool
-addMatBy(matrix *mat1, matrix mat2);
+addMatBy(matrix *mat1, matrix *mat2);
 
 /**
  * @brief 
@@ -34,8 +34,8 @@ addMatBy(matrix *mat1, matrix mat2);
  * @param mat2 
  * @return matrix 
  */
-matrix
-substractMat(matrix mat1, matrix mat2);
+matrix*
+substractMat(matrix *mat1, matrix *mat2);
 
 /**
  * @brief 
@@ -46,7 +46,7 @@ substractMat(matrix mat1, matrix mat2);
  * @return false 
  */
 bool
-substractMatBy(matrix *mat1, matrix mat2);
+substractMatBy(matrix *mat1, matrix *mat2);
 /**
  * @brief 
  * 
@@ -54,8 +54,8 @@ substractMatBy(matrix *mat1, matrix mat2);
  * @param mat2 
  * @return matrix 
  */
-matrix
-multiplyMat(matrix mat1, matrix mat2);
+matrix*
+multiplyMat(matrix *mat1, matrix *mat2);
 
 /**
  * @brief 
@@ -63,7 +63,7 @@ multiplyMat(matrix mat1, matrix mat2);
  * @param mat 
  * @return matrix 
  */
-matrix
+matrix*
 transposeMat(matrix *mat);
 
 /**
@@ -73,7 +73,7 @@ transposeMat(matrix *mat);
  * @param mat2 
  * @return matrix 
  */
-matrix
+matrix*
 augmentMat(matrix *mat1, matrix *mat2);
 
 #endif  //  _MATRIX_MATRIX_H_

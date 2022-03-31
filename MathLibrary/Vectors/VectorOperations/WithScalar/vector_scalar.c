@@ -8,13 +8,13 @@
 #include "vector_scalar.h"
 
 
-vector
-scalarVectMultiplicationTo(vector vec, float scalar) {
-    vector new_vector;
+vector*
+scalarVectMultiplicationTo(vector *vec, float scalar) {
+    vector *new_vector;
 
-    new_vector = createVector(vec.size);
-    for (unsigned int i = 0; i < vec.size; i++) {
-        new_vector.elements[i] = vec.elements[i] * scalar;
+    new_vector = createVector(vec->size);
+    for (unsigned int i = 0; i < vec->size; i++) {
+        new_vector->elements[i] = vec->elements[i] * scalar;
     }
 
     return new_vector;
@@ -29,13 +29,13 @@ scalarVectMultiplicationAt(vector *vec, float scalar) {
 }
 
 
-vector
-scalarVectDivisionTo(vector vec, float scalar) {
-    vector new_vector;
+vector*
+scalarVectDivisionTo(vector *vec, float scalar) {
+    vector *new_vector;
 
-    new_vector = createVector(vec.size);
-    for (unsigned int i = 0; i < vec.size; i++) {
-        new_vector.elements[i] = vec.elements[i] / scalar;
+    new_vector = createVector(vec->size);
+    for (unsigned int i = 0; i < vec->size; i++) {
+        new_vector->elements[i] = vec->elements[i] / scalar;
     }
 
     return new_vector;
@@ -50,13 +50,13 @@ scalarVectDivisionAt(vector *vec, float scalar) {
 }
 
 
-vector
-powerVectorTo(vector vec, float power) {
-    vector new_vector;
+vector*
+powerVectorTo(vector *vec, float power) {
+    vector *new_vector;
 
-    new_vector = createVector(vec.size);
-    for (unsigned int i = 0; i < vec.size; i++) {
-        new_vector.elements[i] = pow(vec.elements[i], power);
+    new_vector = createVector(vec->size);
+    for (unsigned int i = 0; i < vec->size; i++) {
+        new_vector->elements[i] = pow(vec->elements[i], power);
     }
 
     return new_vector;

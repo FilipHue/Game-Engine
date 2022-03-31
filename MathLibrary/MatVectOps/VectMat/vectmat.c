@@ -6,38 +6,38 @@
 #include "./vectmat.h"
 
 
-matrix
+matrix*
 MatrixRowToVector(vector *vec) {
-    matrix row_mat;
+    matrix *row_mat;
 
     row_mat = createMatrix(1, vec->size);
     for (unsigned int i = 0; i < vec->size; i++) {
-        row_mat.elements[0][i] = vec->elements[i];
+        row_mat->elements[0][i] = vec->elements[i];
     }
 
     return row_mat;
 }
 
 
-matrix
+matrix*
 MatrixCollumnToVector(vector *vec) {
-    matrix collumn_mat;
+    matrix *collumn_mat;
 
     collumn_mat = createMatrix(vec->size, 1);
     for (unsigned int i = 0; i < vec->size; i++) {
-        collumn_mat.elements[i][0] = vec->elements[i];
+        collumn_mat->elements[i][0] = vec->elements[i];
     }
 
     return collumn_mat;
 }
 
-matrix
+matrix*
 augmentVect(matrix *mat, vector *vec) {
     if (vec->size != mat->rows) {
-        return MATRIX_UNDEFINED;
+        return NULL;
     }
 
-    matrix augMat;
+    matrix *augMat;
 
     augMat = createMatrix(mat->rows, mat->collums + 1);
     for (unsigned int i = 0; i < mat->rows; i++) {
@@ -45,10 +45,10 @@ augmentVect(matrix *mat, vector *vec) {
 
         j = 0;
         for (; j < mat->collums; j++) {
-            augMat.elements[i][j] = mat->elements[i][j];
+            augMat->elements[i][j] = mat->elements[i][j];
         }
 
-        augMat.elements[i][j] = vec->elements[i];
+        augMat->elements[i][j] = vec->elements[i];
     }
 
     return augMat;

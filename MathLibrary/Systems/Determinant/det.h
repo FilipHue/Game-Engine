@@ -17,7 +17,7 @@
  * @param collumn 
  * @return matrix 
  */
-matrix
+matrix*
 spliceMat(matrix *mat, unsigned int row, unsigned int collumn);
 
 /**
@@ -27,7 +27,7 @@ spliceMat(matrix *mat, unsigned int row, unsigned int collumn);
  * @return float 
  */
 float
-detMat(matrix mat);
+detMat(matrix *mat);
 
 /**
  * @brief 
@@ -36,6 +36,6 @@ detMat(matrix mat);
  * @return float 
  */
 float
-luDet(matrix mat);
+luDet(matrix *mat);
 
 #endif  //  _DET_H_

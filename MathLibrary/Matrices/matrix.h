@@ -16,7 +16,7 @@ struct matrix
 
 extern const matrix MATRIX_UNDEFINED;
 
-#define matrix(rows, collumns, ...) createNewMatrix(rows, collumns, NUM_ARGS(float, __VA_ARGS__), ##__VA_ARGS__)
+#define matrix(rows, collumns, ...) *createNewMatrix(rows, collumns, NUM_ARGS(float, __VA_ARGS__), ##__VA_ARGS__)
 
 /**
  * @brief
@@ -25,7 +25,7 @@ extern const matrix MATRIX_UNDEFINED;
  * @param collums 
  * @return matrix 
  */
-matrix
+matrix*
 createMatrix(unsigned int rows, unsigned int collums);
 
 /**
@@ -34,7 +34,7 @@ createMatrix(unsigned int rows, unsigned int collums);
  * @param size 
  * @return matrix 
  */
-matrix
+matrix*
 createIdentityMatrix(unsigned int size);
 
 /**
@@ -45,7 +45,7 @@ createIdentityMatrix(unsigned int size);
  * @param default_value 
  * @return matrix 
  */
-matrix
+matrix*
 createDefaultMatrix(unsigned int rows, unsigned int collumsn, float default_value);
 
 /**
@@ -55,7 +55,7 @@ createDefaultMatrix(unsigned int rows, unsigned int collumsn, float default_valu
  * @param collumns 
  * @return matrix 
  */
-matrix
+matrix*
 createZeroMatrix(unsigned int rows, unsigned int collumns);
 
 /**
@@ -66,7 +66,7 @@ createZeroMatrix(unsigned int rows, unsigned int collumns);
  * @param ... 
  * @return matrix 
  */
-matrix
+matrix*
 createNewMatrix(unsigned int rows, unsigned int collumns, ...);
 
 /**
@@ -75,8 +75,8 @@ createNewMatrix(unsigned int rows, unsigned int collumns, ...);
  * @param mat 
  * @return matrix 
  */
-matrix
-copyMatrix(matrix mat);
+matrix*
+copyMatrix(matrix *mat);
 
 /**
  * @brief 
@@ -84,7 +84,7 @@ copyMatrix(matrix mat);
  * @param mat 
  * @return matrix 
  */
-matrix
+matrix*
 copyMatrixPointer(matrix *mat);
 
 /**
@@ -93,7 +93,7 @@ copyMatrixPointer(matrix *mat);
  * @param mat 
  */
 void
-printMatrix(matrix mat);
+printMatrix(matrix *mat);
 
 /**
  * @brief 
@@ -104,7 +104,7 @@ printMatrix(matrix mat);
  * @return false 
  */
 bool
-equalMatrix(matrix mat1, matrix mat2);
+equalMatrix(matrix *mat1, matrix *mat2);
 
 /**
  * @brief 
@@ -112,6 +112,6 @@ equalMatrix(matrix mat1, matrix mat2);
  * @param mat 
  */
 void
-destroyMat(matrix *mat);
+destroyMat(matrix **mat);
 
 #endif

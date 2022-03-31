@@ -7,14 +7,14 @@
 #include "../../matrix.h"
 
 
-matrix
-addMatScalar(matrix mat, float scalar) {
-    matrix new_matrix;
+matrix*
+addMatScalar(matrix *mat, float scalar) {
+    matrix *new_matrix;
 
-    new_matrix = createMatrix(mat.rows, mat.collums);
-    for (unsigned int i = 0; i < mat.rows; i++) {
-        for (unsigned int j = 0; j < mat.collums; j++) {
-            new_matrix.elements[i][j] = mat.elements[i][j] + scalar;
+    new_matrix = createMatrix(mat->rows, mat->collums);
+    for (unsigned int i = 0; i < mat->rows; i++) {
+        for (unsigned int j = 0; j < mat->collums; j++) {
+            new_matrix->elements[i][j] = mat->elements[i][j] + scalar;
         }
     }
 
@@ -31,14 +31,14 @@ addMatScalarBy(matrix *mat, float scalar) {
 }
 
 
-matrix
-subtractMatScalar(matrix mat, float scalar) {
-    matrix new_matrix;
+matrix*
+subtractMatScalar(matrix *mat, float scalar) {
+    matrix *new_matrix;
 
-    new_matrix = createMatrix(mat.rows, mat.collums);
-    for (unsigned int i = 0; i < mat.rows; i++) {
-        for (unsigned int j = 0; j < mat.collums; j++) {
-            new_matrix.elements[i][j] = mat.elements[i][j] - scalar;
+    new_matrix = createMatrix(mat->rows, mat->collums);
+    for (unsigned int i = 0; i < mat->rows; i++) {
+        for (unsigned int j = 0; j < mat->collums; j++) {
+            new_matrix->elements[i][j] = mat->elements[i][j] - scalar;
         }
     }
 
@@ -56,14 +56,14 @@ subtractMatScalarBy(matrix *mat, float scalar) {
 }
 
 
-matrix
-divisionMatScalar(matrix mat, float scalar) {
-    matrix new_matrix;
+matrix*
+divisionMatScalar(matrix *mat, float scalar) {
+    matrix *new_matrix;
 
-    new_matrix = createMatrix(mat.rows, mat.collums);
-    for (unsigned int i = 0; i < mat.rows; i++) {
-        for (unsigned int j = 0; j < mat.collums; j++) {
-            new_matrix.elements[i][j] = mat.elements[i][j] / scalar;
+    new_matrix = createMatrix(mat->rows, mat->collums);
+    for (unsigned int i = 0; i < mat->rows; i++) {
+        for (unsigned int j = 0; j < mat->collums; j++) {
+            new_matrix->elements[i][j] = mat->elements[i][j] / scalar;
         }
     }
 
@@ -81,14 +81,14 @@ divisionMatScalarBy(matrix *mat, float scalar) {
 }
 
 
-matrix
-multiplyMatScalar(matrix mat, float scalar) {
-    matrix new_matrix;
+matrix*
+multiplyMatScalar(matrix *mat, float scalar) {
+    matrix *new_matrix;
 
-    new_matrix = createMatrix(mat.rows, mat.collums);
-    for (unsigned int i = 0; i < mat.rows; i++) {
-        for (unsigned int j = 0; j < mat.collums; j++) {
-            new_matrix.elements[i][j] = mat.elements[i][j] * scalar;
+    new_matrix = createMatrix(mat->rows, mat->collums);
+    for (unsigned int i = 0; i < mat->rows; i++) {
+        for (unsigned int j = 0; j < mat->collums; j++) {
+            new_matrix->elements[i][j] = mat->elements[i][j] * scalar;
         }
     }
 
@@ -106,14 +106,14 @@ multiplyMatScalarBy(matrix *mat, float scalar) {
 }
 
 
-matrix
-powerMatrix(matrix mat, float power) {
-    matrix new_matrix;
+matrix*
+powerMatrix(matrix *mat, float power) {
+    matrix *new_matrix;
 
-    new_matrix = createMatrix(mat.rows, mat.collums);
-    for (unsigned int i = 0; i < mat.rows; i++) {
-        for (unsigned int j = 0; j < mat.collums; j++) {
-            new_matrix.elements[i][j] = pow(mat.elements[i][j], power);
+    new_matrix = createMatrix(mat->rows, mat->collums);
+    for (unsigned int i = 0; i < mat->rows; i++) {
+        for (unsigned int j = 0; j < mat->collums; j++) {
+            new_matrix->elements[i][j] = pow(mat->elements[i][j], power);
         }
     }
 

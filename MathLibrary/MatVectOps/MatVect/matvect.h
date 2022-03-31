@@ -14,7 +14,7 @@
  * @param row 
  * @return vector 
  */
-vector
+vector*
 getMatrixRow(matrix *mat, int row);
 
 /**
@@ -24,7 +24,7 @@ getMatrixRow(matrix *mat, int row);
  * @param collumn 
  * @return vector 
  */
-vector
+vector*
 getMatrixCollumn(matrix *mat, int collumn);
 
 /**
@@ -34,7 +34,7 @@ getMatrixCollumn(matrix *mat, int collumn);
  * @param vec 
  * @return vector 
  */
-vector
-multiplyMatVect(matrix mat, vector vec);
+vector*
+multiplyMatVect(matrix *mat, vector *vec);
 
 #endif  //  _MATVECT_H_

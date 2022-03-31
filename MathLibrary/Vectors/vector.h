@@ -25,7 +25,7 @@ extern const vector VECTOR_UNDEFINED;
  * @brief 
  * 
  */
-#define vector(...) createNewVector(NUM_ARGS(float, __VA_ARGS__), ##__VA_ARGS__)
+#define vector(...) *createNewVector(NUM_ARGS(float, __VA_ARGS__), ##__VA_ARGS__)
 
 /**
  * @brief 
@@ -33,7 +33,7 @@ extern const vector VECTOR_UNDEFINED;
  * @param size 
  * @return vector 
  */
-vector
+vector*
 createVector(unsigned int size);
 
 /**
@@ -43,7 +43,7 @@ createVector(unsigned int size);
  * @param default_value 
  * @return vector 
  */
-vector
+vector*
 createDefaultVector(unsigned int size, float default_value);
 
 /**
@@ -52,7 +52,7 @@ createDefaultVector(unsigned int size, float default_value);
  * @param size 
  * @return vector 
  */
-vector
+vector*
 createEmptyVector(unsigned int size);
 
 /**
@@ -62,7 +62,7 @@ createEmptyVector(unsigned int size);
  * @param ... 
  * @return vector 
  */
-vector
+vector*
 createNewVector(unsigned int numArgs, ...);
 
 /**
@@ -71,7 +71,7 @@ createNewVector(unsigned int numArgs, ...);
  * @param vec 
  * @return vector 
  */
-vector
+vector*
 copyVector(vector *vec);
 
 /**
@@ -80,8 +80,8 @@ copyVector(vector *vec);
  * @param vec 
  * @return vector 
  */
-vector
-copyVectorPtr(vector vec);
+vector*
+copyVectorPtr(vector *vec);
 
 /**
  * @brief 
@@ -89,7 +89,7 @@ copyVectorPtr(vector vec);
  * @param vec 
  */
 void
-printVector(vector vec);
+printVector(vector *vec);
 
 /**
  * @brief 
@@ -100,7 +100,7 @@ printVector(vector vec);
  * @return false 
  */
 bool
-equalVector(vector vec1, vector vec2);
+equalVector(vector *vec1, vector *vec2);
 
 /**
  * @brief 
@@ -108,7 +108,7 @@ equalVector(vector vec1, vector vec2);
  * @param vec 
  */
 void
-destroyVect(vector *vec);
+destroyVect(vector **vec);
 
 
 #endif  //  _VECTOR_H_

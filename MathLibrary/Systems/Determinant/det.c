@@ -8,25 +8,25 @@
 #include "../LU/lu.h"
 
 
-matrix
+matrix*
 spliceMat(matrix *mat, unsigned int row, unsigned int collumn) {
-    matrix new_matrix;
+    matrix *new_matrix;
     unsigned int rowOffset;
 
     new_matrix = createMatrix(mat->rows - 1, mat->collums - 1);
     rowOffset = 0;
-    for (unsigned int i = 0; i < new_matrix.rows; i++) {
+    for (unsigned int i = 0; i < new_matrix->rows; i++) {
         unsigned int collOffset;
 
         collOffset = 0;
         if (i == row - 1) {
             rowOffset++;
         }
-        for (unsigned int j = 0; j < new_matrix.collums; j++) {
+        for (unsigned int j = 0; j < new_matrix->collums; j++) {
             if (j == collumn - 1) {
                 collOffset++;
             }
-            new_matrix.elements[i][j] = mat->elements[i + rowOffset][j + collOffset];
+            new_matrix->elements[i][j] = mat->elements[i + rowOffset][j + collOffset];
         }
     }
 
@@ -34,20 +34,23 @@ spliceMat(matrix *mat, unsigned int row, unsigned int collumn) {
 }
 
 float
-detMat(matrix mat) {
-    if (mat.rows != mat.collums) {
+detMat(matrix *mat) {
+    if (mat->rows != mat->collums) {
         return 0.0f;
     }
-    if (mat.rows == 1) {
-        return mat.elements[0][0];
+    if (mat->rows == 1) {
+        return mat->elements[0][0];
     }
 
-    char sign = 1;
-    float det = 0.0f;
+    char sign;
+    float det;
+    
+    sign = 1;
+    det = 0.0f;
 
-    for (unsigned int j = 0; j < mat.collums; j++) {
-        matrix spliced = spliceMat(&mat, 1, j + 1);
-        det += sign * mat.elements[0][j] * detMat(spliced);
+    for (unsigned int j = 0; j < mat->collums; j++) {
+        matrix *spliced = spliceMat(mat, 1, j + 1);
+        det += sign * mat->elements[0][j] * detMat(spliced);
         sign = -sign;
         destroyMat(&spliced);
     }
@@ -56,27 +59,30 @@ detMat(matrix mat) {
 }
 
 float
-luDet(matrix mat) {
-    if (mat.rows != mat.collums) {
+luDet(matrix *mat) {
+    if (mat->rows != mat->collums) {
         return 0.0f;
     }
-    if (mat.rows == 1) {
-        return mat.elements[0][0];
+    if (mat->rows == 1) {
+        return mat->elements[0][0];
     }
 
-    matrix L, U;
-    float det = 0.0f;
-
+    matrix *L, *U;
+    float det;
+    
+    L = NULL;
+    U = NULL;
+    det = 0.0f;
     luDecomposition(mat, &L, &U);
-    printMatrix(L);
-    printMatrix(U);
-    for (unsigned int i = 0; i < U.rows; i++) {
-        if (!det) {
-            det += U.elements[i][i];
+    for (unsigned int i = 0; i < U->rows; i++) {
+        if (i == 0) {
+            det += U->elements[i][i];
         } else {
-            det *= U.elements[i][i];
+            det *= U->elements[i][i];
         }
     }
+    destroyMat(&L);
+    destroyMat(&U);
 
     return det;
 }

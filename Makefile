@@ -15,10 +15,10 @@ TARGETS_O = src/engine.o $(VECTOR_PATH)/vector.o \
 						$(MATRIX_PATH)/matrix.o \
 						$(MATRIX_PATH_OPS)/WithScalar/matrix_scalar.o \
 						$(MATRIX_PATH_OPS)/WithMatrix/matrix_matrix.o \
-						$(MATRIX_PATH_OPS)/WithRows/row_ops.o \
-						$(MATRIX_PATH_OPS)/WithCollumns/collumn_ops.o \
 						$(MATVECT_OPS)/matvect.o \
+						$(MATRIX_PATH_OPS)/WithRows/row_ops.o \
 						$(VECTMAT_OPS)/vectmat.o \
+						$(MATRIX_PATH_OPS)/WithCollumns/collumn_ops.o \
 						$(SYSTEMS)/Ref/ref.o \
 						$(SYSTEMS)/RRef/rref.o \
 						$(SYSTEMS)/Determinant/det.o \

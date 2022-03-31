@@ -8,26 +8,30 @@
 
 
 void
-luDecomposition(matrix mat, matrix *L, matrix *U) {
-    *L = createIdentityMatrix(mat.rows);
-    *U = copyMatrixPointer(&mat);
+luDecomposition(matrix *mat, matrix **L, matrix **U) {
+    *L = createIdentityMatrix(mat->rows);
+    *U = copyMatrixPointer(mat);
     unsigned int currentRow;
 
     currentRow = 0;
-    for (unsigned int i = 0; i < U->collums; i++) {
+    for (unsigned int i = 0; i < (*U)->collums; i++) {
         unsigned int j;
         float coefficient, factor;
 
         j = currentRow;
-        if (j == mat.rows) {
+        if (j == mat->rows) {
             break;
         }
-        coefficient = U->elements[currentRow][i];
-        for (unsigned int t = currentRow + 1; t < U->rows; t++) {
-            factor = U->elements[t][i] / coefficient;
-            L->elements[t][i] = factor;
-            addMultipleRows(U, t + 1, currentRow + 1, -1 * factor);
+        coefficient = (*U)->elements[currentRow][i];
+        for (unsigned int t = currentRow + 1; t < (*U)->rows; t++) {
+            if (coefficient) {
+                factor = (*U)->elements[t][i] / coefficient;
+            } else {
+                factor = 0.0;
+            }
+            (*L)->elements[t][i] = factor;
+            addMultipleRows(*U, t + 1, currentRow + 1, -1 * factor);
         }
         currentRow++;
-    }
+    }   
 }

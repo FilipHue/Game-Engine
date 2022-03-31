@@ -12,8 +12,8 @@
  * @param vec2 
  * @return vector 
  */
-vector
-addVect(vector vec1, vector vec2);
+vector*
+addVect(vector *vec1, vector *vec2);
 
 /**
  * @brief 
@@ -24,7 +24,7 @@ addVect(vector vec1, vector vec2);
  * @return false 
  */
 bool
-addVectBy(vector *vec1, vector vec2);
+addVectBy(vector *vec1, vector *vec2);
 
 /**
  * @brief
@@ -33,8 +33,8 @@ addVectBy(vector *vec1, vector vec2);
  * @param vec2 
  * @return vector 
  */
-vector
-substractVect(vector vec1, vector vec2);
+vector*
+substractVect(vector *vec1, vector *vec2);
 
 /**
  * @brief
@@ -45,7 +45,7 @@ substractVect(vector vec1, vector vec2);
  * @return false 
  */
 bool
-substractVectBy(vector *vec1, vector vec2);
+substractVectBy(vector *vec1, vector *vec2);
 
 /**
  * @brief 
@@ -54,8 +54,8 @@ substractVectBy(vector *vec1, vector vec2);
  * @param vec2 
  * @return vector 
  */
-vector
-vectorMultiplication(vector vec1, vector vec2);
+vector*
+vectorMultiplication(vector *vec1, vector *vec2);
 
 /**
  * @brief 
@@ -66,7 +66,7 @@ vectorMultiplication(vector vec1, vector vec2);
  * @return false 
  */
 bool
-vectorMultiplicationBy(vector *vec1, vector vec2);
+vectorMultiplicationBy(vector *vec1, vector *vec2);
 
 /**
  * @brief 
@@ -75,8 +75,8 @@ vectorMultiplicationBy(vector *vec1, vector vec2);
  * @param vec2 
  * @return vector 
  */
-vector
-vectorDivision(vector vec1, vector vec2);
+vector*
+vectorDivision(vector *vec1, vector *vec2);
 
 /**
  * @brief 
@@ -87,7 +87,7 @@ vectorDivision(vector vec1, vector vec2);
  * @return false 
  */
 bool
-vectorDivisionBy(vector *vec1, vector vec2);
+vectorDivisionBy(vector *vec1, vector *vec2);
 
 /**
  * @brief 
@@ -97,7 +97,7 @@ vectorDivisionBy(vector *vec1, vector vec2);
  * @return float 
  */
 float
-dotProduct(vector vec1, vector vec2);
+dotProduct(vector *vec1, vector *vec2);
 
 /**
  * @brief 
@@ -108,7 +108,7 @@ dotProduct(vector vec1, vector vec2);
  * @return false 
  */
 bool
-isOrthogonal(vector vec1, vector vec2);
+isOrthogonal(vector *vec1, vector *vec2);
 
 /**
  * @brief 
@@ -117,8 +117,8 @@ isOrthogonal(vector vec1, vector vec2);
  * @param vec2 
  * @return vector 
  */
-vector
-crossProduct(vector vec1, vector vec2);
+vector*
+crossProduct(vector *vec1, vector *vec2);
 
 /**
  * @brief 
@@ -127,7 +127,7 @@ crossProduct(vector vec1, vector vec2);
  * @return float 
  */
 float
-magnitude(vector vec);
+magnitude(vector *vec);
 
 /**
  * @brief 
@@ -136,15 +136,15 @@ magnitude(vector vec);
  * @return float 
  */
 float
-magnitudeSquared(vector vec);
+magnitudeSquared(vector *vec);
 /**
  * @brief 
  * 
  * @param vec 
  * @return vector 
  */
-vector
-normalizeVectorTo(vector vec);
+vector*
+normalizeVectorTo(vector *vec);
 
 /**
  * @brief 

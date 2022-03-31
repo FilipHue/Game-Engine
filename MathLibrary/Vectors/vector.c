@@ -6,46 +6,47 @@
 
 const vector VECTOR_UNDEFINED = {0, NULL};
 
-vector
+vector*
 createVector(unsigned int size) {
-    vector new_vect;
+    vector *new_vect;
 
-    new_vect.size = size;
-    new_vect.elements = malloc(size * sizeof(float));
+    new_vect = malloc(sizeof(vector));
+    new_vect->size = size;
+    new_vect->elements = malloc(size * sizeof(float));
 
     return new_vect;
 }
 
 
-vector
+vector*
 createDefaultVector(unsigned int size, float default_value) {
-    vector new_vector;
+    vector *new_vector;
     
     new_vector = createVector(size);
     for (unsigned int i = 0; i < size; i++) {
-        new_vector.elements[i] = default_value;
+        new_vector->elements[i] = default_value;
     }
 
     return new_vector;
 }
 
 
-vector
+vector*
 createEmptyVector(unsigned int size) {
     return createDefaultVector(size, 0.0f);
 }
 
 
-vector
+vector*
 createNewVector(unsigned int size, ...) {
-    vector new_vector;
+    vector *new_vector;
     
     new_vector = createVector(size);
     va_list args_list;
     va_start(args_list, size);
 
     for (unsigned int i = 0; i < size; i++) {
-        new_vector.elements[i] = va_arg(args_list, double);
+        new_vector->elements[i] = va_arg(args_list, double);
     }
 
     va_end(args_list);
@@ -54,30 +55,34 @@ createNewVector(unsigned int size, ...) {
 }
 
 
-vector
+vector*
 copyVector(vector *vec) {
-    vector copy_vector;
+    vector *copy_vector;
 
-    memcpy(&copy_vector, vec, sizeof(vector));
+    copy_vector = createVector(vec->size);
+    copy_vector->size = vec->size;
+    for (unsigned int i = 0; i < vec->size; i++) {
+        copy_vector->elements[i] = vec->elements[i];
+    }
 
     return copy_vector;
 }
 
 
-vector
-copyVectorPtr(vector vec) {
+vector*
+copyVectorPtr(vector *vec) {
     
     return vec;
 }
 
 
 void
-printVector(vector vec) {
+printVector(vector *vec) {
     printf("[");
 
-    for (unsigned int i = 0; i < vec.size; i++) {
-        printf("%f", vec.elements[i]);
-        if (i < vec.size - 1) {
+    for (unsigned int i = 0; i < vec->size; i++) {
+        printf("%f", vec->elements[i]);
+        if (i < vec->size - 1) {
             printf(", ");
         }
     }
@@ -86,10 +91,10 @@ printVector(vector vec) {
 
 
 bool
-equalVector(vector vec1, vector vec2) {
-    if (vec1.size == vec2.size) {
-        for (unsigned int i = 0; i < vec1.size; i++) {
-            if (vec1.elements[i] != vec2.elements[i]) {
+equalVector(vector *vec1, vector *vec2) {
+    if (vec1->size == vec2->size) {
+        for (unsigned int i = 0; i < vec1->size; i++) {
+            if (vec1->elements[i] != vec2->elements[i]) {
                 return false;
             }
         }
@@ -101,8 +106,11 @@ equalVector(vector vec1, vector vec2) {
 }
 
 void
-destroyVect(vector *vec) {
-    free(vec->elements);
-    vec->elements = NULL;
-    vec->size = 0;
+destroyVect(vector **vec) {
+    if (!(*vec)) {
+        return;
+    }
+    free((*vec)->elements);
+    free(*vec);
+    *vec = NULL;
 }

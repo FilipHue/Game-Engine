@@ -13,7 +13,7 @@
  * @param vec 
  * @return matrix 
  */
-matrix
+matrix*
 MatrixRowToVector(vector *vec);
 
 /**
@@ -22,7 +22,7 @@ MatrixRowToVector(vector *vec);
  * @param vec 
  * @return matrix 
  */
-matrix
+matrix*
 MatrixCollumnToVector(vector *vec);
 
 /**
@@ -32,7 +32,7 @@ MatrixCollumnToVector(vector *vec);
  * @param vec 
  * @return matrix 
  */
-matrix
+matrix*
 augmentVect(matrix *mat, vector *vec);
 
 #endif  //  _VECT_MAT_H_

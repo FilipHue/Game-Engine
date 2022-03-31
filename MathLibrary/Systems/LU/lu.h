@@ -15,7 +15,7 @@
  * @param U 
  */
 void
-luDecomposition(matrix mat, matrix *L, matrix *U);
+luDecomposition(matrix *mat, matrix **L, matrix **U);
 
 
 #endif  //  _LU_H_

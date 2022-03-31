@@ -8,6 +8,15 @@
         "vectmat.h": "c",
         "ref.h": "c",
         "rref.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "stdlib.h": "c",
+        "vector_scalar.h": "c",
+        "array": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "utility": "c",
+        "mathlibrary.h": "c",
+        "constants.h": "c",
+        "matrix_scalar.h": "c"
     }
 }
