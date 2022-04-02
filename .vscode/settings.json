@@ -17,6 +17,7 @@
         "utility": "c",
         "mathlibrary.h": "c",
         "constants.h": "c",
-        "matrix_scalar.h": "c"
+        "matrix_scalar.h": "c",
+        "vector": "c"
     }
 }

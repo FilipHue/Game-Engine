@@ -6,8 +6,10 @@ VECTOR_PATH_OPS = $(VECTOR_PATH)/VectorOperations
 MATRIX_PATH = MathLibrary/Matrices
 MATRIX_PATH_OPS = $(MATRIX_PATH)/MatrixOperations
 MATVECT_OPS = MathLibrary/MatVectOps/MatVect
-SYSTEMS = MathLibrary/Systems
 VECTMAT_OPS = MathLibrary/MatVectOps/VectMat
+SYSTEMS = MathLibrary/Systems
+BIGINT = MathLibrary/BigIntegers
+BIGINT_OPS = $(BIGINT)/Operations
 TARGETS = src/engine
 TARGETS_O = src/engine.o $(VECTOR_PATH)/vector.o \
 						$(VECTOR_PATH_OPS)/WithScalar/vector_scalar.o \
@@ -22,7 +24,9 @@ TARGETS_O = src/engine.o $(VECTOR_PATH)/vector.o \
 						$(SYSTEMS)/Ref/ref.o \
 						$(SYSTEMS)/RRef/rref.o \
 						$(SYSTEMS)/Determinant/det.o \
-						$(SYSTEMS)/LU/lu.o
+						$(SYSTEMS)/LU/lu.o \
+						$(BIGINT)/bigint.o \
+						$(BIGINT_OPS)/operations.o
 
 build: $(TARGETS)
 
@@ -97,6 +101,14 @@ $(SYSTEMS)/LU/lu.o: $(SYSTEMS)/LU/lu.h $(SYSTEMS)/LU/lu.c
 		$(CC) $(CFLAGS) $(DEBUG) $(SYSTEMS)/LU/lu.c \
 								-c -o $(SYSTEMS)/LU/lu.o
 
+$(BIGINT)/bigint.o: $(BIGINT)/bigint.h $(BIGINT)/bigint.c
+		$(CC) $(CFLAGS) $(DEBUG) $(BIGINT)/bigint.c \
+								-c -o $(BIGINT)/bigint.o
+
+$(BIGINT_OPS)/operations.o: $(BIGINT_OPS)/operations.h $(BIGINT_OPS)/operations.c
+		$(CC) $(CFLAGS) $(DEBUG) $(BIGINT_OPS)/operations.c \
+								-c -o $(BIGINT_OPS)/operations.o
+
 run:
 	./$(TARGETS)
 
@@ -118,6 +130,8 @@ clean:
 	rm -f $(SYSTEMS)/RRef/*.o
 	rm -f $(SYSTEMS)/Determinant/*.o
 	rm -f $(SYSTEMS)/LU/*.o
+	rm -f $(BIGINT)/*.o
+	rm -f $(BIGINT_OPS)/*.o
 	rm -f $(TARGETS)
 	rm -f src/*.o
 	clear

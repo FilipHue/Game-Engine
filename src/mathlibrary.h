@@ -16,5 +16,7 @@
 #include "../MathLibrary/Systems/RRef/rref.h"
 #include "../MathLibrary/Systems/Determinant/det.h"
 #include "../MathLibrary/Systems/LU/lu.h"
+#include "../MathLibrary/BigIntegers/bigint.h"
+#include "../MathLibrary/BigIntegers/Operations/operations.h"
 
 #endif
