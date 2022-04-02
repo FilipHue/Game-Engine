@@ -109,9 +109,9 @@ substractBint(bint *number1, bint *number2) {
         }
         new_bint->digits[i] = result;
     }
-    // while (!new_bint->digits[new_bint->noDigits - 1]) {
-    //     new_bint->noDigits--;
-    // }
+    while (!new_bint->digits[new_bint->noDigits - 1]) {
+        new_bint->noDigits--;
+    }
 
     return new_bint;
 }
